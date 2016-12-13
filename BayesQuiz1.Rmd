@@ -1,0 +1,183 @@
+---
+title: "Bayes Quiz 1"
+author: "Spencer Castro"
+date: "December 13, 2016"
+output: html_document
+---
+<style>
+body {float:left;}
+.question {margin: 10px 15px 10px 8px;
+padding: 25px 50px;
+}
+.hint { background-color:#CAE1FF;
+margin: 10px 15px 10px 8px;
+padding: 10px 3px 10px 5px;
+}
+</style>
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+<div>
+<ol>
+<div class="question">
+<li>You draw two balls from one of three possible large urns, labelled A, B, and C. Urn A has 1/2 blue balls, 1/3 green balls, and 1/6 red balls. Urn B has 1/6 blue balls, 1/2 green balls, and 1/3 red balls. Urn C has 1/3 blue balls, 1/6 green balls, and 1/2 red balls. With no prior information about which urn your are drawing from, you draw one red ball and one blue ball. What is the probability that you drew from urn C?</li>
+<ul>
+<li>19/36 <b>-> WRONG</b></li>
+<li>5/9</li>
+<li>1/3</li>
+<li>6/11</li>
+</ul>
+<div class="hint">
+Recall the definition of likelihood, which is the probability of the data given the unknown parameters.
+<br/>
+This question refers to the following learning objective(s):
+Define the concepts of prior, likelihood, and posterior probability and identify how they relate to one another.
+</div>
+```{r}
+
+```
+</div>
+<div class="question">
+<li>Suppose ten people are sampled from the population and their heights are recorded. Further suppose their heights are distributed normally, with unknown mean $\mu$ and unknown variance $\sigma^2$ . Which of the following statements best describes the likelihood of the data Y in this situation?</li>
+<ul>
+<li>The probability of observing the data, given <b>$\mu, \sigma^2$</b>.</li>
+<li>The probability of observing the data, given <b>$\mu, \sigma^2$</b>, and the prior. <b>-> WRONG</b></li>
+<li>The probability of observing heights with a mean at least as extreme as <b>$\bar{Y}$</b> , given <b$\mu$ and $\sigma^2$</b>.</li>
+<li>The probability of observing the data, given the prior beliefs about the distribution of $\mu$ and $\sigma^2$.</li>
+</ul>
+<div class="hint">
+Recall the definition of likelihood, which is the probability of the data given the unknown parameters.
+<br/>
+This question refers to the following learning objective(s):
+<br/>
+Define the concepts of prior, likelihood, and posterior probability and identify how they relate to one another
+</div>
+```{r }
+
+```
+</div>
+<div class="question">
+<li>You go to Las Vegas and sit down at a slot machine. You are told by a highly reliable source that, for each spin, the probability of hitting the jackpot is either 1 in 1,000 or 1 in 1,000,000, but you have no prior information to tell you which of the two it is. You play ten times, but do not win the jackpot. What is the posterior probability that the true odds of hitting the jackpot are 1 in 1,000?</li>
+<ul>
+<li>0.269</li>
+<li>0.475</li>
+<li>0.498 <b>-> RIGHT</b></li>
+<li>0.500</li>
+</ul>
+<div class="hint">
+This question refers to the following learning objective(s):
+<br/>
+Use Bayes' rule to compare multiple hypotheses about a discrete random variable: Work with the discrete form of Bayes' rule.
+</div>
+
+```{r }
+
+```
+</div>
+<div class="question">
+<li>The posterior distribution after repeating the same experiment twice and then analyzing the data from both experiments at the same time is the same as that after running the second experiment with the posterior of the first experiment as the prior.</li>
+<ul>
+<li>True</li>
+<li>False <b>-> WRONG</b></li>
+</ul>
+<div class="hint">
+A feature of Bayesian statistics is that our posterior beliefs update after each new data point comes in. Our posterior after seeing some data becomes our new prior before we acquire more data
+<br/>
+This question refers to the following learning objective(s):
+<br/>
+Update prior probabilities through an iterative process of data collection
+</div>
+```{r }
+
+```
+</div>
+<div class="question">
+<li>Which of the following is the best Bayesian interpretation of the following statement: "the probability of Liverpool defeating Swansea City tomorrow is 0.9"?</li>
+<ul>
+<li>We would be indifferent to betting on Liverpool to win at 1:9 odds.</li>
+<li>Teams as good as Liverpool have historically beaten teams as good as Swansea City 90 percent of the time. <b>-> WRONG</b></li>
+<li>Liverpool is a heavy favorite to beat Swansea City.</li>
+<li>Liverpool would beat Swansea City nine times out of ten.</li>
+</ul>
+
+<div class="hint">
+In the Bayesian paradigm, probability is a degree of belief, which can be quantified in terms of wager preference and/or indifference.
+<br/>
+This question refers to the following learning objective(s):
+<br/>
+Understand the differences between Frequentist and Bayesian definitions of probability and how they apply to inference
+</div>
+```{r }
+
+```
+</div>
+<div class="question">
+<li>Which of the following statements can be used to describe a 95 percent Bayesian credible interval for a parameter $\mu$, but not a 95 percent Frequentist confidence interval?</li>
+<ul>
+<li>If we ran an infinite number of experiments, 95 percent of our intervals generated this way would contain the true value of$\mu$.</li>
+<li>$\mu$ is in this interval 95 percent of the time.</li>
+<li>The probability that $\mu$ falls within the interval is 0.95 <b>-> RIGHT</b></li>
+<li>$\mu$ is either in the interval, or it is not. More data can increase or decrease our uncertainty that $\mu$ is in the interval.</li>
+</ul>
+<div class="hint">
+This question refers to the following learning objective(s):
+<br/>
+Understand the differences between Frequentist and Bayesian definitions of probability and how they apply to inference
+</div>
+```{r }
+
+```
+</div>
+<div class="question">
+<li>A new breast cancer screening method is tested to see if it performs better than existing methods in detecting breast cancer. To measure the sensitivity of the test, a total of 10,000 patients known to have various stages of breast cancer are testing using the new method. Of those 10,000 patients, 9,942 are identified by the new method to have breast cancer. Given that the sensitivity of the best current test is 99.3%, is there significant evidence at the $\alpha$=0.05 level to conclude that the new method has higher sensitivity than existing methods?</li> <br/>Hint - $H_0:p=0.993$ and $H_1:p>0.993$
+<ul>
+<li>Yes, since the p-value under H0 of no difference is approximately equal to 0.033, which is less than $\alpha$=0.05</li>
+<li>No, since the p-value under H0 of no difference is approximately equal to 0.081, which is greater than $\alpha$=0.05</li>
+<li>Yes, since the p-value under H0 of no difference is approximately equal to 0.048, which is less than$\alpha$=0.05</li>
+<li>No, since the p-value under H0 of no difference is approximately equal to 0.063, which is greater than $\alpha$=0.05 <b>-> WRONG</b></li>
+</ul>
+```{r }
+
+```
+</div>
+<div class="question">
+<li>You decide to conduct a statistical analysis of a lottery to determine how many possible lottery combinations there were. If there are N possible lottery combinations, each person has a 1/N chance of winning. Suppose that 413,271,201 people played the lottery and three people won. You are told that the number of lottery combinations is a multiple of 100 million and less than 1 billion, but have no other prior information to go on. What is the posterior probability that there were fewer than 600 million lottery combinations?</li>
+<ul>
+<li>0.269</li>
+<li>0.390</li>
+<li>0.511 <b>-> WRONG</b></li>
+<li>0.894</li>
+</ul>
+
+Since you have no prior knowledge about the urn, $P(A) = P(B) = P(C) = \frac{1}{3}$. Use Bayes' rule to calculate $P(C|red,blue)$.
+
+
+```{r }
+
+```
+</div>
+<div class="question">
+<li>Recall the probability distribution of a Poisson random variable X:
+$$P(X=x)=\frac{\lambda^xe^{-\lambda}}{\lambda^x!}$$
+where $\lambda$ is the rate parameter that equals the expected value of X. </br><p></P>
+You are a professor and assign your TAs to type up a very important homework assignment. You have three TAs: David makes an average of one typo per page, Amy makes an average of two typos per page, and Joe makes an average of three typos per page. A one-page typed homework assignment is turned into your box that has ten typos! Assuming that typos follow a Poisson distribution and you have no prior knowledge about which TA typed the assignment, what is the posterior probability that the TA who typed the homework assignment was Joe?</li>
+<ul>
+<li>0.334 <b>-> WRONG</b></li>
+<li>0.547</li>
+<li>0.866</li>
+<li>0.954</li>
+</ul>
+```{r }
+
+```
+</div>
+<div class="question">
+<li>True or False: As long as the prior places non-zero probability on all possible values of a proportion, the posterior of the proportion is guaranteed to converge to the true proportion as the sample size approaches infinity.</li>
+<ul>
+<li>True <b>-> RIGHT</b></li>
+<li>False</li>
+</ul>
+</div>
+
+</ol>
+</div>
